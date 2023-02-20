@@ -1,4 +1,4 @@
-project "Server"
+project "Networking"
     kind "StaticLib"
     language "C++"
     cppdialect "C++17"
@@ -16,8 +16,8 @@ project "Server"
     includedirs
     {
         "%{wks.location}/Renderer/src",
-        "dependencies/asio-1.24.0/include"
-        "src",
+        "dependencies/asio-1.24.0/include",
+        "src"
     }
 
     links
