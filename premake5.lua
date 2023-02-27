@@ -15,29 +15,12 @@ project "Networking"
 
     includedirs
     {
-        "%{wks.location}/Renderer/src",
         "dependencies/asio-1.24.0/include",
         "src"
     }
 
-    links
-    {
-        "Renderer"
-    }
-
-    filter "system:linux"
-        postbuildcommands
-        {
-            ("cp -R -l Res \"%{wks.location}bin/" .. outputdir .. "/%{prj.name}/Res\"")
-        }
-
     filter "system:windows"
 		systemversion "latest"
-
-        postbuildcommands
-        { 
-            "Xcopy /E /I /y Res \"%{wks.location}bin\\" .. outputdir .. "\\%{prj.name}\\Res\""
-        }
 
 	filter "configurations:Debug"
 		defines "DEBUG"
